@@ -25,6 +25,10 @@ body {
   --sky-blue: #62bcfa;
   --button-red: #d73737;
   --button-blue: #373f68;
+  --btn-hover:#CFD7FF;
+  --btn-text-color: #4661E6;
+
+
 }
 
 .container-full {
@@ -72,11 +76,20 @@ nav {
     gap: 10px; 
 }
 
-.btn-check:checked{
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
     color: var(--snow-white) !important;
     background-color: var(--royal-blue) !important;
 }
 
-.btn-check:hover{
-    background-color: var(--steel-blue);
+.btn-check:hover+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: var(--pale-lavender);
+    font-family: Jost;
+    border-radius: 10px;
+    background-color: var(--btn-hover) !important;
+}
+.btn{
+    color: var(--btn-text-color);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 19px;
 }
