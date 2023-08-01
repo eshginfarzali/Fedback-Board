@@ -76,10 +76,6 @@ nav {
     gap: 10px; 
 }
 
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
-    color: var(--snow-white) !important;
-    background-color: var(--royal-blue) !important;
-}
 
 .btn-check:hover+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
     background-color: var(--pale-lavender);
@@ -87,6 +83,11 @@ nav {
     border-radius: 10px;
     background-color: var(--btn-hover) !important;
 }
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    color: var(--snow-white) !important;
+    background-color: var(--royal-blue) !important;
+}
+
 .btn{
     color: var(--btn-text-color);
     font-size: 18px;
