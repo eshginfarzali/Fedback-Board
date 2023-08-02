@@ -29,11 +29,11 @@ body {
   background-color: var(--powder-blue);
 }
 
-.container-full {
+.container-1-full {
   width: 100%;
 }
 
-.container {
+.container-1 {
   width: 90%;
   margin: 0 auto;
   margin-top: 70px;
@@ -481,7 +481,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
   }
-  .container {
+  .container-1 {
     margin: auto unset;
     width: 100% !important;
     display: flex;
@@ -497,7 +497,7 @@ nav {
     margin: 0;
   }
   .roadmap-box , .all-box{
-    display: none;
+ display: none;
   }
   .all-box {
     position: absolute;
@@ -533,7 +533,7 @@ nav {
     display: none;
   }
 
-  .container {
+  .container-1 {
     padding: unset;
     margin: 90px unset;
     width: 100% !important;
