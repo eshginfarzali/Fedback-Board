@@ -124,3 +124,96 @@ letter-spacing: 0px;
     font-weight: 600;
     line-height: 19px;
 }
+
+.roadmap-box{
+  width: 255px;
+  height: 137px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--snow-white);
+  padding: 10px 20px ;
+  border-radius: 8px;
+}
+.roadmap>h2{
+  font-family: Jost;
+font-size: 18px;
+font-weight: 700;
+line-height: 26px;
+letter-spacing: -0.25px;
+text-align: left;
+color: var(--midnight-indigo);
+
+}
+a{
+  color: inherit;
+}
+.view>p{
+  font-family: Jost;
+font-size: 13px;
+font-weight: 600;
+line-height: 19px;
+letter-spacing: 0px;
+text-align: left;
+color: var(--royal-blue);
+&:hover{
+  color: #8397f8;
+}
+}
+.roadmap-view, .list-planed{
+display: flex;
+justify-content: space-between;
+}
+
+
+.list-plan{
+  font-family: Jost;
+font-size: 16px;
+font-weight: 400;
+line-height: 23px;
+letter-spacing: 0px;
+text-align: left;
+color: var(--steel-blue);
+
+}
+.list-count{
+  font-family: Jost;
+font-size: 16px;
+font-weight: 700;
+line-height: 23px;
+letter-spacing: 0px;
+text-align: right;
+color: var(--steel-blue);
+}
+.status-color{
+  display: inline-block;
+ vertical-align:middle;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+.status-color-plan{
+background-color: var(--coral-peach);
+}
+
+.status-color-progress{
+  background-color: var(--lavender-purple);
+}
+.status-color-live{
+  background-color: var(--sky-blue);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
