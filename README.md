@@ -2,6 +2,7 @@
 
 ## Folder structure
 - index.html
+- Json
 - assets
     - icons
     - img
