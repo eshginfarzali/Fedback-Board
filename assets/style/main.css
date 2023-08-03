@@ -293,6 +293,7 @@ nav {
   padding: 35px 20px;
   background-color: var(--snow-white);
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .count-feed > button {
@@ -339,7 +340,14 @@ nav {
   text-align: left;
   color: var(--steel-blue);
 }
-
+.text-feed{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.feed-com{
+  align-self: center;
+}
 .text-feed > button {
   width: 111px;
   height: 30px;

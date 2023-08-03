@@ -1,7 +1,8 @@
-const menuToggle = document.getElementById('menu__toggle');
 const body = document.body;
+const menuToggle = document.getElementById('menu__toggle');
 const roadmapBox = document.querySelector('.roadmap-box');
 const allBox = document.querySelector('.all-box');
+const addFeedbackBox =document.querySelector('.add-feedback-box')
 
 function updateLayout() {
   if (window.matchMedia("(max-width: 768px)").matches) {
@@ -26,3 +27,8 @@ window.addEventListener('resize', updateLayout);
 
 // Initial layout update
 updateLayout();
+
+
+addFeedbackBox.addEventListener("click", ()=>{
+    location.href = "./assets/page/feedback-detial.html"
+})
