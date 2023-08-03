@@ -3,19 +3,26 @@ const body = document.body;
 const roadmapBox = document.querySelector('.roadmap-box');
 const allBox = document.querySelector('.all-box');
 
-menuToggle.addEventListener('change', function() {
-    if (this.checked) {
-        body.style.overflow = 'hidden';
-        if (window.matchMedia("(max-width: 768px)").matches) {
-        roadmapBox.style.display = 'inline-block';
-        allBox.style.display = 'inline-block';
-        }
+function updateLayout() {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    if (menuToggle.checked) {
+      body.style.overflow = 'hidden';
+      roadmapBox.style.display = 'inline-block';
+      allBox.style.display = 'inline-block';
     } else {
-        body.style.overflow = 'auto';
-        if (window.matchMedia("(max-width: 768px)").matches) {
-        roadmapBox.style.display = 'none';
-        allBox.style.display = 'none';
-        location.reload();
-        }
+      body.style.overflow = 'auto';
+      roadmapBox.style.display = 'none';
+      allBox.style.display = 'none';
     }
-});
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    body.style.overflow = 'auto';
+    roadmapBox.style.display = 'flex';
+    allBox.style.display = 'flex';
+  }
+}
+
+menuToggle.addEventListener('change', updateLayout);
+window.addEventListener('resize', updateLayout);
+
+// Initial layout update
+updateLayout();

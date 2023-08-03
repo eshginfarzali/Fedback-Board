@@ -512,6 +512,9 @@ nav {
     right: 30px;
     z-index: 1;
   }
+  #menu__toggle:checked + .all-box{
+    display: flex;
+  }
   .gradient-feed {
     display: flex;
     justify-content: center;
