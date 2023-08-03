@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --lavender-purple: #ad1fea;
+  --sapphire-blue: #4661e6;
+  --royal-blue: #4661e6;
+  --snow-white: #ffffff;
+  --pale-lavender: #f2f4ff;
+  --powder-blue: #f7f8fd;
+  --midnight-indigo: #3a4374;
+  --steel-blue: #647196;
+  --coral-peach: #f49f85;
+  --sky-blue: #62bcfa;
+  --button-red: #d73737;
+  --button-blue: #373f68;
+  --btn-hover: #cfd7ff;
+  --btn-text-color: #4661e6;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: "Instrument Sans", sans-serif; */
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Jost", sans-serif;
+  background-color: var(--powder-blue);
+  background-color: #f2f2f2;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.go-back {
+  margin-top: 20px;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--steel-blue);
+}
+.go-back > a:hover {
+  text-decoration: underline;
+}
+
+.editing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-top: 80px;
+  background-color: var(--snow-white);
+  border-radius: 8px;
+  padding: 28px;
+}
+.edit-icon {
+  position: absolute;
+  top: -28px;
+  left: 28px;
+}
+.editing > h1 {
+  font-family: Jost;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: -0.3333333432674408px;
+  text-align: left;
+  color: var(--midnight-indigo);
+  margin-top: 30px;
+}
+.feedback-edit-box {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.title-text > h2 {
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.1944444477558136px;
+  text-align: left;
+  color: var(--midnight-indigo);
+}
+.title-text > p {
+  margin-top: 5px;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--steel-blue);
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #f7f8fd;
+  padding: 15px 30px;
+  cursor: pointer;
+  color: var(--midnight-indigo);
+}
+input:focus {
+  outline: 1px solid var(--lavender-purple);
+}
+select{
+    background-color: #f7f8fd;
+    padding: 15px 30px;
+    color: var(--midnight-indigo);
+    width: 100%;
+    border: none;
+    outline: none;
+
+}
+
+.qrup-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: var(--pale-lavender);
+}
+.delete > button {
+  width: 93px;
+  height: 44px;
+  background-color: var(--button-red);
+  &:hover{
+    background-color: #E98888;
+    
+  }
+}
+.cancel-update{
+    display: flex;
+    gap: 20px;
+}
+.cancel-update > button:nth-child(1) {
+  width: 93px;
+  height: 44px;
+  background-color: var(--midnight-indigo);
+  &:hover{
+    background-color: #3a4374c6;
+
+  }
+}
+.cancel-update > button:nth-child(2) {
+  width: 158px;
+  height: 44px;
+  background-color: var(--lavender-purple);
+  &:hover{
+    background-color: #ad1feac7;
+
+  }
+}
+
+@media (max-width:768px){
+    button{
+        width: 100%;
+    }
+    .qrup-btn{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .delete > button {
+width: 100%;
+      }
+
+    .cancel-update{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .cancel-update > button:nth-child(1) {
+      width: 100%;
+   
+    }
+    .cancel-update > button:nth-child(2) {
+        width: 100%;
+    }
+    
+}

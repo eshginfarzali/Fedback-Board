@@ -1,14 +1,13 @@
 const countUp = document.getElementById("count-up");
 const countBtn = document.getElementById("countBtn");
-const postReply =document.querySelectorAll(".reply-one")
-const postReplyes =document.querySelectorAll(".replyes")
-const replyForm =document.querySelector(".form-reply-comment")
+const postReply = document.querySelectorAll(".reply-one");
+const postReplyes = document.querySelectorAll(".replyes");
+const replyForm = document.querySelector(".form-reply-comment");
 const generalForm = document.querySelector(".general-comment");
-const postComment =document.getElementById('postComment')
-const postCommentInp =document.getElementById('postCommentInp')
-const newPostComment =document.querySelector('.new-post-comment-general')
-const commentBox =document.querySelector('.comment-box')
-
+const postComment = document.getElementById('postComment');
+const postCommentInp = document.getElementById('postCommentInp');
+const newPostComment = document.querySelector('.new-post-comment-general');
+const commentBox = document.querySelector('.comment-box');
 
 let count = 0;
 const storedCount = localStorage.getItem("count");
@@ -18,111 +17,102 @@ if (storedCount !== null) {
 }
 
 function updateCountText() {
-  countUp.textContent = `${count}`;
+    countUp.textContent = `${count}`;
 }
 
 function handleUpCount() {
-  count++;
-  updateCountText();
-  localStorage.setItem("count", count); 
-  countBtn.removeEventListener("click", handleUpCount);
+    count++;
+    updateCountText();
+    localStorage.setItem("count", count);
+    countBtn.removeEventListener("click", handleUpCount);
 }
 
 countBtn.addEventListener("click", handleUpCount);
 
-async function fetchUser(){
- const resp = await fetch("../../Json/User.json")
- const data = await resp.json()
- return data;
+async function fetchUser() {
+    const resp = await fetch("../../Json/User.json");
+    const data = await resp.json();
+    return data;
 }
-fetchUser()
 
-async function processData(){
+async function getCommentData() {
     try {
-      const userData = await fetchUser(); // Call the fetchUser function to get the data
-      commentBox.innerHTML =`
-      <div class="profile-img">
-      <img src="../img/profile-img.jpg" alt="" />
-    </div>
-    <div class="user-comment">
-      <div class="user-reply">
-        <div class="user-name">
-          <h1>${userData.name}</h1>
-          <p>${userData.username}</p>
-        </div>
-        <div class="reply reply-one">
-          <p>Reply</p>
-        </div>
-      </div>
-      <div class="comment-text">
-        <p>
-        ${userData.comment}
-        </p>
-      </div>
-
-      <section class="section-reply-comment">
-        <div class="comment-box">
-          <div class="profile-img">
-            <img src="../img/profile-img.jpg" alt="" />
-          </div>
-          <div class="user-comment">
-            <div class="user-reply">
-              <div class="user-name">
-                <h1>Eshgin Farzaliyev</h1>
-                <p>@eshginfarzali</p>
-              </div>
-              <div class="reply replyes">
-                <p class="replyes">Reply</p>
-              </div>
+        const userData = await fetchUser();
+        commentBox.innerHTML = `
+            <div class="profile-img">
+                <img src="../img/profile-img.jpg" alt="" />
             </div>
-            <div class="comment-text">
-              <p>
-              ${userData.comment}
-              </p>
+            <div class="user-comment">
+                <div class="user-reply">
+                    <div class="user-name">
+                        <h1>${userData.name}</h1>
+                        <p>${userData.username}</p>
+                    </div>
+                    <div class="reply reply-one">
+                        <p>Reply</p>
+                    </div>
+                </div>
+                <div class="comment-text">
+                    <p>
+                        ${userData.comment}
+                    </p>
+                </div>
+
+                <section class="section-reply-comment">
+                    <div class="comment-box">
+                        <div class="profile-img">
+                            <img src="../img/profile-img.jpg" alt="" />
+                        </div>
+                        <div class="user-comment">
+                            <div class="user-reply">
+                                <div class="user-name">
+                                    <h1>Eshgin Farzaliyev</h1>
+                                    <p>@eshginfarzali</p>
+                                </div>
+                                <div class="reply replyes">
+                                    <p class="replyes">Reply</p>
+                                </div>
+                            </div>
+                            <div class="comment-text">
+                                <p>
+                                    ${userData.comment}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-box">
+                        <div class="profile-img">
+                            <img src="../img/profile-img.jpg" alt="" />
+                        </div>
+                        <div class="user-comment">
+                            <div class="user-reply">
+                                <div class="user-name">
+                                    <h1>Eshgin Farzaliyev</h1>
+                                    <p>@eshginfarzali</p>
+                                </div>
+                                <div class="reply replyes">
+                                    <p class="replyes">Reply</p>
+                                </div>
+                            </div>
+                            <div class="comment-text">
+                                <p>
+                                    ${userData.comment}
+                                </p>
+                            </div>
+                            <form style="gap: 10px;" class="form-reply-comment"></form>
+                        </div>
+                    </div>
+
+                </section>
             </div>
-          </div>
-        </div>
-
-
-
-        <div class="comment-box">
-          <div class="profile-img">
-            <img src="../img/profile-img.jpg" alt="" />
-          </div>
-          <div class="user-comment">
-            <div class="user-reply">
-              <div class="user-name">
-                <h1>Eshgin Farzaliyev</h1>
-                <p>@eshginfarzali</p>
-              </div>
-              <div class="reply replyes">
-                <p class="replyes">Reply</p>
-              </div>
-            </div>
-            <div class="comment-text">
-              <p>
-                ${userData.comment}
-              </p>
-            </div>
-            <form style="gap: 10px;" class="form-reply-comment"></form>
-          </div>
-        </div>
-
-
-
-
-
-
-
-      </section>
-    </div>
-      `
+        `;
     } catch (error) {
-      console.error("Error fetching user data:", error);
+        console.error("Error fetching user data:", error);
     }
-  }
-  
-  processData();
+}
+
+getCommentData();
 
 
 function addPostComment(e){
@@ -217,54 +207,34 @@ newPostComment.innerHTML =`
 postCommentInp.value=''
 
 }
-
-
-
-postComment.addEventListener("click", addPostComment)
-
-
-
-
-
-
-
-
+postComment.addEventListener("click", addPostComment);
 
 function addPostReplyes() {
-    // generalForm.remove();
-
-
-  replyForm.innerHTML = `
-    <form>
-      <div class="inp-text">
-        <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
-      </div>
-      <div class="post-reply"><button>Post Reply</button></div>
-    </form>
-  `;
-
+    replyForm.innerHTML = `
+        <form>
+            <div class="inp-text">
+                <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
+            </div>
+            <div class="post-reply"><button>Post Reply</button></div>
+        </form>
+    `;
 }
 
 function addPostReply() {
-    // replyForm.remove();
-
-
-
-  generalForm.innerHTML = `
-    <form>
-      <div class="inp-text">
-        <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
-      </div>
-      <div class="post-reply"><button>Post Reply</button></div>
-    </form>
-  `;
-
+    generalForm.innerHTML = `
+        <form>
+            <div class="inp-text">
+                <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
+            </div>
+            <div class="post-reply"><button>Post Reply</button></div>
+        </form>
+    `;
 }
 
 postReplyes.forEach((button) => {
     button.addEventListener("click", addPostReplyes);
-  });
+});
 
-postReply.forEach((button)=>{
-button.addEventListener("click", addPostReply)
+postReply.forEach((button) => {
+    button.addEventListener("click", addPostReply);
 });
