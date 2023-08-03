@@ -1,7 +1,9 @@
 const countUp = document.getElementById("count-up");
 const countBtn = document.getElementById("countBtn");
-const postReply =document.querySelector(".reply")
-const form =document.querySelector("form")
+const postReply =document.querySelector(".reply-one")
+const postReplyes =document.querySelectorAll(".replyes")
+const replyForm =document.querySelector(".form-reply-comment")
+const generalForm = document.querySelector(".general-comment");
 
 
 let count = 0;
@@ -24,16 +26,41 @@ function handleUpCount() {
 
 countBtn.addEventListener("click", handleUpCount);
 
-  
-function addPostReply(){
-form.innerHTML=`
-<div class="inp-text">
 
-<input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
-</div>
-<div class="post-reply"><button>Post Reply</button></div>
-`
+
+function addPostReplyes() {
+    // generalForm.remove();
+
+
+  replyForm.innerHTML = `
+    <form>
+      <div class="inp-text">
+        <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
+      </div>
+      <div class="post-reply"><button>Post Reply</button></div>
+    </form>
+  `;
+
 }
 
+function addPostReply() {
+    // replyForm.remove();
 
-postReply.addEventListener("click", addPostReply)
+
+
+  generalForm.innerHTML = `
+    <form>
+      <div class="inp-text">
+        <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
+      </div>
+      <div class="post-reply"><button>Post Reply</button></div>
+    </form>
+  `;
+
+}
+
+postReplyes.forEach((button) => {
+    button.addEventListener("click", addPostReplyes);
+  });
+
+postReply.addEventListener("click", addPostReply);

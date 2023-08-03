@@ -161,13 +161,7 @@ header > .edit-btn > a:hover {
   color: var(--midnight-indigo);
 }
 
-.comments {
-  margin-top: 20px;
-  padding: 20px;
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--snow-white);
-}
+
 
 .comments > h4 {
   font-family: Jost;
@@ -233,7 +227,15 @@ header > .edit-btn > a:hover {
 .reply:hover {
   text-decoration: underline;
 }
-
+.comments {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--snow-white);
+}
 .comment-text > p {
   margin-top: 30px;
   font-family: Jost;
@@ -290,8 +292,85 @@ form {
   background: #c75af6;
 }
 
+.add-comment-section{
+  margin-top: 15px;
+  width: 100%;
+  height: 246px;
+  background-color: var(--snow-white);
+  border-radius: 8px;
+  padding: 20px;
+}
+.post-comment{
+  display: flex;
+  flex-direction: column;
+}
+
+.add-new-comment-inp>input{
+  width: 100%;
+}
+
+.add-comment-post{
+  align-self: end;
+  width: 142px;
+  height: 44px;
+}
+.add-comment-post>button{
+  border: none;
+  background-color: var(--lavender-purple);
+  border-radius: 8px;
+  width: 142px;
+  height: 44px;
+  font-family: Jost;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: var(--pale-lavender);  
+}
+
+.add-comment-post>button:hover{
+  background: #C75AF6;
+
+}
+.add-comment-section>h5{
+  
+}
+
+.add-new-comment-inp > input {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  outline: 1px solid var(--sapphire-blue);
+  padding: 20px 10px;
+  background-color: #f7f8fd;
+  font-family: Jost;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.add-new-comment-inp > input:focus {
+  outline: 1px solid var(--lavender-purple);
+  color: var(--midnight-indigo);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
-  form {
+  .form-reply-comment,.general-comment {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
