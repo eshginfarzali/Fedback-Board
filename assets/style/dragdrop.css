@@ -148,13 +148,13 @@ li {
    /* background-color: var(--coral-peach); */
    align-self: center;
 }
-.task[data-status="planned"]{
+.task[data-status="Planned"]{
     border-top: 5px solid var(--coral-peach);
 }
-.task[data-status="progres"]{
+.task[data-status="In-Progress"]{
     border-top: 5px solid var(--lavender-purple);
 }
-.task[data-status="live"]{
+.task[data-status="Live"]{
     border-top: 5px solid var(--sky-blue);
 }
 .task{

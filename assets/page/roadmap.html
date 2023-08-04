@@ -35,51 +35,53 @@
       </header>
       <div class="header-columns">
         <div class="column-header column-head planned-header">
-          <h4>Planned</h4>
+            <h4>Planned</h4>
         </div>
         <div class="column-header column-head in-progress-header">
-          <h4>In-Progress</h4>
+            <h4>In-Progress</h4>
         </div>
         <div class="column-header column-head live-header">
-          <h4>Live</h4>
+            <h4>Live</h4>
         </div>
-      </div>
-      <hr />
-
-      <div class="main-container">
+    </div>
+    <hr />
+    
+    <div class="main-container">
         <ul class="columns">
-          <li class="column to-do-column">
-            <div class="column-header">
-              <h4>Planned(2)</h4>
-              <p>Ideas prioritized for research</p>
-            </div>
-            <ul class="task-list" id="planned">
-  
-            </ul>
-          </li>
-
-          <li class="column doing-column">
-            <div class="column-header">
-              <h4>In-Progress</h4>
-              <p>Ideas prioritized for research</p>
-            </div>
-            <ul class="task-list" id="progress">
-
-            </ul>
-          </li>
-
-          <li class="column done-column">
-            <div class="column-header">
-              <h4>Live</h4>
-              <p>Ideas prioritized for research</p>
-            </div>
-            <ul class="task-list" id="live">
-              <!-- <li class="task" data-status="live"> -->
-               
-            </ul>
-          </li>
+            <li class="column to-do-column">
+                <div class="column-header">
+                    <h4>Planned</h4>
+                    <p>Ideas prioritized for research</p>
+                </div>
+                <ul class="task-list" id="planned">
+                </ul>
+                <!-- <div class="empty-container" id="empty-planned"></div> -->
+            </li>
+    
+            <li class="column doing-column">
+                <div class="column-header">
+                    <h4>In-Progress</h4>
+                    <p>Ideas prioritized for research</p>
+                </div>
+                <ul class="task-list" id="progress">
+                </ul>
+                <!-- <div class="empty-container" id="empty-progress"></div> -->
+            </li>
+    
+            <li class="column done-column">
+                <div class="column-header">
+                    <h4>Live</h4>
+                    <p>Ideas prioritized for research</p>
+                </div>
+                <ul class="task-list" id="live">
+                </ul>
+                <!-- <div class="empty-container" id="empty-live"></div> -->
+            </li>
         </ul>
-      </div>
+    </div>
+    <div class="empty-container" id="empty-planned"></div>
+    <div class="empty-container" id="empty-progress"></div>
+    <div class="empty-container" id="empty-live"></div>    
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
@@ -95,7 +97,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../../assets/js/roadmap-data.js"></script>
     <script src="../../assets/js/roadmap.js"></script>
   </body>
 </html>

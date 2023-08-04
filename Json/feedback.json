@@ -21,7 +21,7 @@
     },
     {
       "id": "7fadd34d-2bb1-4964-8ef2-882b722b4380",
-      "status": "In-progress",
+      "status": "In-Progress",
       "statusColor": "#ad1fea",
       "title": "AI-Powered Recommendations",
       "text": "Develop AI-driven recommendation engine for personalized user suggestions.",
@@ -31,7 +31,7 @@
     },
     {
       "id": "e45e16f2-e50d-4d1d-a1f9-4ac9820b3a7d",
-      "status": "In-progress",
+      "status": "In-Progress",
       "statusColor": "#ad1fea",
       "title": "Enhanced Data Security",
       "text": "Implement advanced data encryption techniques for enhanced security.",
@@ -41,7 +41,7 @@
     },
     {
       "id": "235899ed-4f14-4a79-b522-6a41ca433c1c",
-      "status": "In-progress",
+      "status": "In-Progress",
       "statusColor": "#ad1fea",
       "title": "Improved Performance Metrics",
       "text": "Optimize performance metrics to ensure faster response times.",
