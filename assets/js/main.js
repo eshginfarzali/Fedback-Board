@@ -1,16 +1,15 @@
 const body = document.body;
-const menuToggle = document.getElementById('menu__toggle');
-const roadmapBox = document.querySelector('.roadmap-box');
-const allBox = document.querySelector('.all-box');
-const feedBackBox = document.getElementById("feedBackBox"); 
+const menuToggle = document.getElementById("menu__toggle");
+const roadmapBox = document.querySelector(".roadmap-box");
+const allBox = document.querySelector(".all-box");
+const feedBackBox = document.getElementById("feedBackBox");
 
 const all = document.querySelector(".all");
 const ui = document.querySelector(".ui");
 const ux = document.querySelector(".ux");
-const enhancement = document.querySelector(".enhancement"); 
+const enhancement = document.querySelector(".enhancement");
 const bug = document.querySelector(".bug");
 const feature = document.querySelector(".feature");
-
 
 async function fetchAndRenderData() {
   try {
@@ -95,11 +94,6 @@ async function fetchAndRenderData() {
 
 fetchAndRenderData();
 
-
-
-
-
-
 function filterAndDisplay(category) {
   const feedbackSections = feedBackBox.querySelectorAll(".add-feedback-box");
   feedbackSections.forEach((section) => {
@@ -121,45 +115,27 @@ feature.addEventListener("click", () => filterAndDisplay("Feature"));
 
 fetchAndRenderData();
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
 function updateLayout() {
   if (window.matchMedia("(max-width: 768px)").matches) {
     if (menuToggle.checked) {
-      body.style.overflow = 'hidden';
-      roadmapBox.style.display = 'inline-block';
-      allBox.style.display = 'inline-block';
+      body.style.overflow = "hidden";
+      roadmapBox.style.display = "inline-block";
+      allBox.style.display = "inline-block";
     } else {
-      body.style.overflow = 'auto';
-      roadmapBox.style.display = 'none';
-      allBox.style.display = 'none';
+      body.style.overflow = "auto";
+      roadmapBox.style.display = "none";
+      allBox.style.display = "none";
     }
   } else if (window.matchMedia("(min-width: 768px)").matches) {
-    body.style.overflow = 'auto';
-    roadmapBox.style.display = 'flex';
-    allBox.style.display = 'flex';
+    body.style.overflow = "auto";
+    roadmapBox.style.display = "flex";
+    allBox.style.display = "flex";
   }
 }
 
-menuToggle.addEventListener('change', updateLayout);
-window.addEventListener('resize', updateLayout);
+menuToggle.addEventListener("change", updateLayout);
+window.addEventListener("resize", updateLayout);
 
-// Initial layout update
 updateLayout();
 
-
-// addFeedbackBox.addEventListener("click", ()=>{
-//     location.href = "./assets/page/feedback-detial.html"
-// })
 
