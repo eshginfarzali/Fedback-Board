@@ -284,12 +284,16 @@ nav {
     background-color: #c75af6;
   }
 }
-
+#feedBackBox{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .add-feedback-box {
   width: 100%;
   display: flex;
   gap: 25px;
-  height: 151px;
+  min-height: 151px;
   padding: 35px 20px;
   background-color: var(--snow-white);
   border-radius: 8px;

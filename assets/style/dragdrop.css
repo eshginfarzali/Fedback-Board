@@ -76,6 +76,9 @@
 
 .task-list {
   min-height: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap:25px;
 }
 
 ul {
@@ -256,6 +259,12 @@ hr{
     display: none;
 }
 @media(max-width:768px){
+  .container{
+    padding: unset;
+  }
+  .main-container{
+    padding: 0 20px;
+  }
    
     header{
         margin:unset ;
@@ -322,7 +331,6 @@ hr{
 }
 
 
-/* Add these classes to your existing CSS */
 
   
  

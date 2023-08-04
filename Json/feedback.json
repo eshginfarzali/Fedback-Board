@@ -15,7 +15,7 @@
       "statusColor": "#F49F85",
       "title": "Enhanced User Feedback",
       "text": "Gather and analyze user feedback to make improvements across the platform.",
-      "category": "Feature",
+      "category": "UI",
       "reiting": 33,
       "comment": 5
     },
@@ -25,7 +25,7 @@
       "statusColor": "#ad1fea",
       "title": "AI-Powered Recommendations",
       "text": "Develop AI-driven recommendation engine for personalized user suggestions.",
-      "category": "Feature",
+      "category": "Bug",
       "reiting": 42,
       "comment": 7
     },
@@ -35,7 +35,7 @@
       "statusColor": "#ad1fea",
       "title": "Enhanced Data Security",
       "text": "Implement advanced data encryption techniques for enhanced security.",
-      "category": "Feature",
+      "category": "UX",
       "reiting": 36,
       "comment": 6
     },
@@ -45,7 +45,7 @@
       "statusColor": "#ad1fea",
       "title": "Improved Performance Metrics",
       "text": "Optimize performance metrics to ensure faster response times.",
-      "category": "Feature",
+      "category": "Enhancement",
       "reiting": 29,
       "comment": 4
     },
@@ -55,7 +55,7 @@
       "statusColor": "#62bcfa",
       "title": "Enhanced User Profiles",
       "text": "Improve user profiles with additional customization options and social integration.",
-      "category": "Feature",
+      "category": "Bug",
       "reiting": 29,
       "comment": 3
     },
@@ -75,7 +75,7 @@
       "statusColor": "#62bcfa",
       "title": "Real-time Collaboration",
       "text": "Implement real-time collaboration features to enable seamless teamwork.",
-      "category": "Feature",
+      "category": "UI",
       "reiting": 27,
       "comment": 4
     }
