@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --lavender-purple: #ad1fea;
+  --sapphire-blue: #4661e6;
+  --royal-blue: #4661e6;
+  --snow-white: #ffffff;
+  --pale-lavender: #f2f4ff;
+  --powder-blue: #f7f8fd;
+  --midnight-indigo: #3a4374;
+  --steel-blue: #647196;
+  --coral-peach: #f49f85;
+  --sky-blue: #62bcfa;
+  --button-red: #d73737;
+  --button-blue: #373f68;
+  --btn-hover: #cfd7ff;
+  --btn-text-color: #4661e6;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  /* font-family: "Instrument Sans", sans-serif; */
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Jost", sans-serif;
+  background-color: var(--powder-blue);
+  background-color: #f2f2f2;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+header{
+  width: 100%;
+  height: 113px;
+  margin-top: 78px;
+  background-color:var(--button-blue);
+  border-radius:8px ;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding:  0 20px;
+ color: var(--snow-white);
+
+}
+
+header>.left>.go-back{
+  font-family: Jost;
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: left;
+
+
+}
+
+header>.left>.go-back>a:hover{
+text-decoration: underline;
+}
+
+header>.left>h2{
+  font-family: Jost;
+font-size: 24px;
+font-weight: 700;
+line-height: 35px;
+letter-spacing: -0.3333333432674408px;
+text-align: left;
+}
+
+header>.add-btn>a>button{
+  border: none;
+  outline: none;
+  width: 158px;
+  height: 44px;
+  background-color: var(--lavender-purple);
+  border-radius:8px ;
+  color: var(--snow-white);
+  font-family: Jost;
+font-size: 14px;
+font-weight: 700;
+line-height: 20px;
+letter-spacing: 0px;
+
+  &:hover{
+    background-color: #a86ac2;
+  }
+}

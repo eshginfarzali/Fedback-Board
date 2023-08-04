@@ -33,7 +33,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
-.container{
+.container {
   max-width: 50%;
 }
 .go-back {
@@ -53,7 +53,7 @@ a {
 .editing {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 90vh;
   margin-top: 80px;
   background-color: var(--snow-white);
   border-radius: 8px;
@@ -111,19 +111,22 @@ input {
   color: var(--midnight-indigo);
 }
 input:focus {
-  outline: 1px solid var(--royal-blue);
+  outline: 1px solid var(--btn-text-color);
 }
-select{
-    background-color: #f7f8fd;
-    padding: 15px 30px;
-    color: var(--midnight-indigo);
-    width: 100%;
-    border: none;
-    outline: none;
-    border-radius: 8px;
- &:focus {
-  outline: 1px solid var(--royal-blue);
+select {
+  background-color: #f7f8fd;
+  padding: 15px 30px;
+  color: var(--midnight-indigo);
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  &:focus {
+    outline: 1px solid var(--btn-text-color);
+  }
 }
+.text-area > input {
+  padding: 50px 30px;
 }
 
 .qrup-btn {
@@ -142,70 +145,54 @@ button {
   letter-spacing: 0px;
   color: var(--pale-lavender);
 }
-.delete > button {
-  width: 93px;
-  height: 44px;
-  background-color: var(--button-red);
-  &:hover{
-    background-color: #E98888;
-    
-  }
-}
-.cancel-update{
-    display: flex;
-    gap: 20px;
+
+.cancel-update {
+  display: flex;
+  gap: 20px;
 }
 .cancel-update > button:nth-child(1) {
   width: 93px;
   height: 44px;
   background-color: var(--midnight-indigo);
-  &:hover{
+  &:hover {
     background-color: #3a4374c6;
-
   }
 }
 .cancel-update > button:nth-child(2) {
   width: 158px;
   height: 44px;
   background-color: var(--lavender-purple);
-  &:hover{
+  &:hover {
     background-color: #ad1feac7;
-
   }
 }
-@media (max-width:1094px){
-  .container{
+@media (max-width: 1094px) {
+  .container {
     max-width: 80%;
   }
 }
-@media (max-width:768px){
-  .container{
+@media (max-width: 768px) {
+  .container {
     width: 95%;
   }
-    button{
-        width: 100%;
-    }
-    .qrup-btn{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .delete > button {
-width: 100%;
-      }
+  button {
+    width: 100%;
+  }
+  .qrup-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 
-    .cancel-update{
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .cancel-update > button:nth-child(1) {
-      width: 100%;
-   
-    }
-    .cancel-update > button:nth-child(2) {
-        width: 100%;
-    }
-    
+  .cancel-update {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .cancel-update > button:nth-child(1) {
+    width: 100%;
+  }
+  .cancel-update > button:nth-child(2) {
+    width: 100%;
+  }
 }
-

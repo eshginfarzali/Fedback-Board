@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roadmap Feedback</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+    <link rel="stylesheet" href="../style/roadmap.css" />
+    <link rel="stylesheet" href="../style/dragdrop.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <div class="left">
+          <div class="go-back">
+            <img src="../icons/go-back.svg" alt="go-back" />&nbsp;
+            <a href="../../index.html"> Go Back </a>
+          </div>
+          <h2>Roadmap</h2>
+        </div>
+        <div class="add-btn">
+          <a href="../page/create-feedback.html"
+            ><button>+ Add Feedback</button></a
+          >
+        </div>
+      </header>
+      <div class="header-columns">
+        <div class="column-header column-head planned-header">
+          <h4>Planned</h4>
+        </div>
+        <div class="column-header column-head in-progress-header">
+          <h4>In-Progress</h4>
+        </div>
+        <div class="column-header column-head live-header">
+          <h4>Live</h4>
+        </div>
+      </div>
+      <hr />
+
+      <div class="main-container">
+        <ul class="columns">
+          <li class="column to-do-column">
+            <div class="column-header">
+              <h4>Planned(2)</h4>
+              <p>Ideas prioritized for research</p>
+            </div>
+            <ul class="task-list" id="planned">
+  
+            </ul>
+          </li>
+
+          <li class="column doing-column">
+            <div class="column-header">
+              <h4>In-Progress</h4>
+              <p>Ideas prioritized for research</p>
+            </div>
+            <ul class="task-list" id="pro">
+              <li class="task" data-status="progres"></li>
+              <li class="task" data-status="progres">
+                <p>User Testing</p>
+              </li>
+              <li class="task" data-status="progres">
+                <p>Prototype</p>
+              </li>
+            </ul>
+          </li>
+
+          <li class="column done-column">
+            <div class="column-header">
+              <h4>Live</h4>
+              <p>Ideas prioritized for research</p>
+            </div>
+            <ul class="task-list" id="done">
+              <li class="task" data-status="live">
+                <p>Ideation</p>
+              </li>
+              <li class="task" data-status="live">
+                <p>Sketches</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../../assets/js/roadmap-data.js"></script>
+    <script src="../../assets/js/roadmap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+[
+    {
+      "id": "437293e3-68b2-4e60-8f27-7d9b5d1d4e50",
+      "status": "Planned",
+      "statusColor": "#F49F85",
+      "title": "Integration with Third-Party Tools",
+      "text": "Enable seamless integration with popular third-party tools to enhance productivity.",
+      "category": "Feature",
+      "reiting": 38,
+      "comment": 6
+    },
+    {
+      "id": "16fc3b56-865a-4e23-af21-5079b0836a0e",
+      "status": "Planned",
+      "statusColor": "#F49F85",
+      "title": "Enhanced User Feedback",
+      "text": "Gather and analyze user feedback to make improvements across the platform.",
+      "category": "Feature",
+      "reiting": 33,
+      "comment": 5
+    },
+    {
+      "id": "7fadd34d-2bb1-4964-8ef2-882b722b4380",
+      "status": "In-progress",
+      "statusColor": "#ad1fea",
+      "title": "AI-Powered Recommendations",
+      "text": "Develop AI-driven recommendation engine for personalized user suggestions.",
+      "category": "Feature",
+      "reiting": 42,
+      "comment": 7
+    },
+    {
+      "id": "e45e16f2-e50d-4d1d-a1f9-4ac9820b3a7d",
+      "status": "In-progress",
+      "statusColor": "#ad1fea",
+      "title": "Enhanced Data Security",
+      "text": "Implement advanced data encryption techniques for enhanced security.",
+      "category": "Feature",
+      "reiting": 36,
+      "comment": 6
+    },
+    {
+      "id": "235899ed-4f14-4a79-b522-6a41ca433c1c",
+      "status": "In-progress",
+      "statusColor": "#ad1fea",
+      "title": "Improved Performance Metrics",
+      "text": "Optimize performance metrics to ensure faster response times.",
+      "category": "Feature",
+      "reiting": 29,
+      "comment": 4
+    },
+    {
+      "id": "f5d4c3a7-81c5-4fc0-b63b-eb7d7db7e04e",
+      "status": "Live",
+      "statusColor": "#4661e6",
+      "title": "Enhanced User Profiles",
+      "text": "Improve user profiles with additional customization options and social integration.",
+      "category": "Feature",
+      "reiting": 29,
+      "comment": 3
+    },
+    {
+      "id": "91f47d1a-6ce3-4563-920b-43977ad33b9a",
+      "status": "Live",
+      "statusColor": "#4661e6",
+      "title": "Advanced Analytics Dashboard",
+      "text": "Introduce an advanced analytics dashboard for deeper data insights.",
+      "category": "Feature",
+      "reiting": 31,
+      "comment": 5
+    },
+    {
+      "id": "c1f1d390-4a96-41c2-8b3f-d2cfb03abf0c",
+      "status": "Live",
+      "statusColor": "#4661e6",
+      "title": "Real-time Collaboration",
+      "text": "Implement real-time collaboration features to enable seamless teamwork.",
+      "category": "Feature",
+      "reiting": 27,
+      "comment": 4
+    }
+  ]
+  
