@@ -52,7 +52,7 @@
     {
       "id": "f5d4c3a7-81c5-4fc0-b63b-eb7d7db7e04e",
       "status": "Live",
-      "statusColor": "#4661e6",
+      "statusColor": "#62bcfa",
       "title": "Enhanced User Profiles",
       "text": "Improve user profiles with additional customization options and social integration.",
       "category": "Feature",
@@ -62,7 +62,7 @@
     {
       "id": "91f47d1a-6ce3-4563-920b-43977ad33b9a",
       "status": "Live",
-      "statusColor": "#4661e6",
+      "statusColor": "#62bcfa",
       "title": "Advanced Analytics Dashboard",
       "text": "Introduce an advanced analytics dashboard for deeper data insights.",
       "category": "Feature",
@@ -72,7 +72,7 @@
     {
       "id": "c1f1d390-4a96-41c2-8b3f-d2cfb03abf0c",
       "status": "Live",
-      "statusColor": "#4661e6",
+      "statusColor": "#62bcfa",
       "title": "Real-time Collaboration",
       "text": "Implement real-time collaboration features to enable seamless teamwork.",
       "category": "Feature",

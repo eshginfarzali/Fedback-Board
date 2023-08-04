@@ -1,8 +1,8 @@
 // Custom Dragula JS
 var drake = dragula([
-    document.getElementById("to-do"),
-    document.getElementById("doing"),
-    document.getElementById("done"),
+    document.getElementById("planned"),
+    document.getElementById("progress"),
+    document.getElementById("live"),
   ], {
     removeOnSpill: false
   });
@@ -28,7 +28,7 @@ var drake = dragula([
     newTask.className = "task";
     newTask.innerHTML = "<p>" + inputTask + "</p>";
     
-    document.getElementById("to-do").appendChild(newTask);
+    document.getElementById("planned").appendChild(newTask);
     document.getElementById("taskText").value = "";
   }
   
@@ -53,13 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const inProgressHeader = document.querySelector('.in-progress-header');
     const liveHeader = document.querySelector('.live-header');
     const columns = document.querySelector('.columns');
+    columns.classList.remove('show-in-progress', 'show-live');
+
+      //border add 
     plannedHeader.classList.add('show-border-planned');
 
     plannedHeader.addEventListener('click', function () {
       columns.classList.remove('show-in-progress', 'show-live');
       plannedHeader.classList.add('show-border-planned');
     
-
+          //border  remove
       inProgressHeader.classList.remove('show-border-progress');
       liveHeader.classList.remove('show-border-live');
     });
@@ -67,9 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
     inProgressHeader.addEventListener('click', function () {
       columns.classList.remove('show-planned', 'show-live');
       columns.classList.add('show-in-progress');
+
+
+          //border add and remove
       inProgressHeader.classList.add('show-border-progress');
-
-
       plannedHeader.classList.remove('show-border-planned');
       liveHeader.classList.remove('show-border-live');
     });
@@ -77,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
     liveHeader.addEventListener('click', function () {
       columns.classList.remove('show-planned', 'show-in-progress');
       columns.classList.add('show-live');
-      liveHeader.classList.add('show-border-live');
 
+
+        //border add and remove
+      liveHeader.classList.add('show-border-live');
       inProgressHeader.classList.remove('show-border-progress');
       plannedHeader.classList.remove('show-border-planned');
 
