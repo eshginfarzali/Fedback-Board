@@ -3,9 +3,6 @@ const menuToggle = document.getElementById("menu__toggle");
 const roadmapBox = document.querySelector(".roadmap-box");
 const allBox = document.querySelector(".all-box");
 
-
-
-
 const feedBackBox = document.getElementById("feedBackBox");
 const feedsCount = document.querySelector(".feeds-count");
 const feedSort = document.getElementById("sort");
@@ -18,33 +15,28 @@ const bug = document.querySelector(".bug");
 const feature = document.querySelector(".feature");
 
 let data = [];
-
+const statusCounts = {};
 async function fetchAndRenderData() {
   try {
     const response = await fetch("../../Json/feedback.json");
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    
+
     data = await response.json();
 
     feedBackBox.innerHTML = "";
+    // feedsCount.innerHTML = "<li>0</li><li>0</li><li>0</li>";
 
-    const statusCounts = {};
+    const statusCounts = { Planned: 0, "In-Progress": 0, Live: 0 };
 
     data.forEach((item) => {
       const status = item.status;
-      if (!statusCounts[status]) {
-        statusCounts[status] = 1;
-      } else {
-        statusCounts[status]++;
-      }
-
+      statusCounts[status]++;
       feedsCount.innerHTML = `
-        <li>${statusCounts.Planned || 0}</li>
-        <li>${statusCounts["In-Progress"] || 0}</li>
-        <li>${statusCounts.Live || 0}</li>`;
-
+      <li>${statusCounts.Planned || 0}  </li>
+      <li>${statusCounts["In-Progress"] || 0}</li>
+      <li>${statusCounts.Live || 0}</li>`;
       const section = document.createElement("section");
       section.className = "add-feedback-box";
 
@@ -136,7 +128,6 @@ feature.addEventListener("click", () => filterAndDisplay("Feature"));
 
 function sortAndDisplay() {
   const value = feedSort.options[feedSort.selectedIndex].value;
-  console.log(value);
 
   switch (value) {
     case "mostcom":
@@ -155,7 +146,7 @@ function sortAndDisplay() {
       break;
   }
 
-  feedBackBox.innerHTML = ""; // Clear the existing content
+  feedBackBox.innerHTML = "";
 
   data.forEach((item) => {
     const section = document.createElement("section");
@@ -228,4 +219,3 @@ function sortAndDisplay() {
 feedSort.addEventListener("change", sortAndDisplay);
 
 fetchAndRenderData();
- 
