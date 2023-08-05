@@ -3,6 +3,7 @@ const menuToggle = document.getElementById("menu__toggle");
 const roadmapBox = document.querySelector(".roadmap-box");
 const allBox = document.querySelector(".all-box");
 const feedBackBox = document.getElementById("feedBackBox");
+const feedsCount = document.querySelector(".feeds-count");
 
 const all = document.querySelector(".all");
 const ui = document.querySelector(".ui");
@@ -19,9 +20,23 @@ async function fetchAndRenderData() {
     }
 
     const data = await response.json();
-    feedBackBox.innerHTML = "";
 
+    feedBackBox.innerHTML = "";
+    const statusCounts = {};
     data.forEach((item) => {
+      const status = item.status;
+      if (!statusCounts[status]) {
+        statusCounts[status] = 1;
+      } else {
+        statusCounts[status]++;
+      }
+
+      console.log(statusCounts);
+      feedsCount.innerHTML = `
+      <li>${statusCounts.Planned || 0}  </li>
+      <li>${statusCounts["In-Progress"] || 0}</li>
+      <li>${statusCounts.Live || 0}</li>`;
+
       const section = document.createElement("section");
       section.className = "add-feedback-box";
 
@@ -137,5 +152,3 @@ menuToggle.addEventListener("change", updateLayout);
 window.addEventListener("resize", updateLayout);
 
 updateLayout();
-
-
