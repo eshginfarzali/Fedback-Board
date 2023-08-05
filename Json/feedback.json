@@ -6,8 +6,8 @@
       "title": "Integration with Third-Party Tools",
       "text": "Enable seamless integration with popular third-party tools to enhance productivity.",
       "category": "Feature",
-      "reiting": 38,
-      "comment": 6
+      "rating": 38,
+      "comment": 11
     },
     {
       "id": "16fc3b56-865a-4e23-af21-5079b0836a0e",
@@ -16,7 +16,7 @@
       "title": "Enhanced User Feedback",
       "text": "Gather and analyze user feedback to make improvements across the platform.",
       "category": "UI",
-      "reiting": 33,
+      "rating": 33,
       "comment": 5
     },
     {
@@ -26,7 +26,7 @@
       "title": "AI-Powered Recommendations",
       "text": "Develop AI-driven recommendation engine for personalized user suggestions.",
       "category": "Bug",
-      "reiting": 42,
+      "rating": 42,
       "comment": 7
     },
     {
@@ -36,7 +36,7 @@
       "title": "Enhanced Data Security",
       "text": "Implement advanced data encryption techniques for enhanced security.",
       "category": "UX",
-      "reiting": 36,
+      "rating": 36,
       "comment": 6
     },
     {
@@ -46,7 +46,7 @@
       "title": "Improved Performance Metrics",
       "text": "Optimize performance metrics to ensure faster response times.",
       "category": "Enhancement",
-      "reiting": 29,
+      "rating": 77,
       "comment": 4
     },
     {
@@ -56,7 +56,7 @@
       "title": "Enhanced User Profiles",
       "text": "Improve user profiles with additional customization options and social integration.",
       "category": "Bug",
-      "reiting": 29,
+      "rating": 29,
       "comment": 3
     },
     {
@@ -66,7 +66,7 @@
       "title": "Advanced Analytics Dashboard",
       "text": "Introduce an advanced analytics dashboard for deeper data insights.",
       "category": "Feature",
-      "reiting": 31,
+      "rating": 31,
       "comment": 5
     },
     {
@@ -76,7 +76,7 @@
       "title": "Real-time Collaboration",
       "text": "Implement real-time collaboration features to enable seamless teamwork.",
       "category": "UI",
-      "reiting": 27,
+      "rating": 27,
       "comment": 4
     }
   ]
