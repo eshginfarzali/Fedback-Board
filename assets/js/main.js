@@ -40,6 +40,38 @@ async function fetchAndRenderData() {
       const section = document.createElement("section");
       section.className = "add-feedback-box";
 
+      let sectionFeedBox = document.querySelectorAll(".add-feedback-box"); 
+      const detialBox =document.querySelector(".detail-box")
+      sectionFeedBox.forEach(feedbox => {
+        
+        // console.log(feedbox);
+         feedbox.setAttribute("id", item.id);
+         feedbox.addEventListener("click", ()=>{
+               let idAttribute = feedbox.getAttribute("id")
+               if(item.id === idAttribute){
+                detialBox.innerHTML=`
+                <div class="text-feed">
+                <h2>${item.title}</h2>
+                <p>${item.text}</p>
+                <button>${item.category}</button>
+              </div>
+              <div class="feed-com">
+                <img src="../../assets/icons/comment.svg" alt="comment" />
+                <span>${item.comment}</span>
+              </div>
+                `
+                console.log(item);
+               }
+   
+          location.href = "../../assets/page/feedback-detial.html";
+
+         })
+
+ 
+      });   
+        
+
+
       const countFeedDiv = document.createElement("div");
       countFeedDiv.className = "count-feed";
 
@@ -119,12 +151,12 @@ function filterAndDisplay(category) {
   });
 }
 
-all.addEventListener("click", () => filterAndDisplay("all"));
-ui.addEventListener("click", () => filterAndDisplay("UI"));
-ux.addEventListener("click", () => filterAndDisplay("UX"));
-enhancement.addEventListener("click", () => filterAndDisplay("Enhancement"));
-bug.addEventListener("click", () => filterAndDisplay("Bug"));
-feature.addEventListener("click", () => filterAndDisplay("Feature"));
+all?.addEventListener("click", () => filterAndDisplay("all"));
+ui?.addEventListener("click", () => filterAndDisplay("UI"));
+ux?.addEventListener("click", () => filterAndDisplay("UX"));
+enhancement?.addEventListener("click", () => filterAndDisplay("Enhancement"));
+bug?.addEventListener("click", () => filterAndDisplay("Bug"));
+feature?.addEventListener("click", () => filterAndDisplay("Feature"));
 
 function sortAndDisplay() {
   const value = feedSort.options[feedSort.selectedIndex].value;
@@ -216,7 +248,7 @@ function sortAndDisplay() {
   });
 }
 
-feedSort.addEventListener("change", sortAndDisplay);
+feedSort?.addEventListener("change", sortAndDisplay);
 
 fetchAndRenderData();
 function updateLayout() {
@@ -237,7 +269,7 @@ function updateLayout() {
   }
 }
 
-menuToggle.addEventListener("change", updateLayout);
+menuToggle?.addEventListener("change", updateLayout);
 window.addEventListener("resize", updateLayout);
 
 updateLayout();

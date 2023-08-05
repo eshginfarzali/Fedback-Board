@@ -351,6 +351,9 @@ nav {
 }
 .feed-com{
   align-self: center;
+  display: flex;
+  gap: 10px;
+
 }
 .text-feed > button {
   width: 111px;
@@ -376,6 +379,7 @@ nav {
   letter-spacing: -0.2222222238779068px;
   text-align: center;
   color: var(--midnight-indigo);
+  /* padding-left: 10px; */
 }
 
 .feed-empty {
