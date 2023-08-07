@@ -173,6 +173,8 @@ header > .edit-btn > a:hover {
   color: var(--midnight-indigo);
 }
 .comment-box {
+  /* flex-direction: column; */
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -207,11 +209,16 @@ header > .edit-btn > a:hover {
   color: var(--midnight-indigo);
 }
 .user-reply {
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
 }
 .user-comment {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 .reply {

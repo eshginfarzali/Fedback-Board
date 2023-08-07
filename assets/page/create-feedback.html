@@ -20,7 +20,7 @@
     <div class="container">
       <div class="go-back">
         <img src="../icons/go-back.svg" alt="go-back" />&nbsp; &nbsp;
-        <a href="../page/feedback-detial.html"> Go Back </a>
+        <a href="../../index.html"> Go Back </a>
       </div>
 
       <section class="editing">
@@ -33,7 +33,7 @@
             <p>Add a short, descriptive headline</p>
           </div>
           <div class="value-text">
-            <input type="text" value="" />
+            <input  id="feedbackTitle" type="text"  />
           </div>
           <div class="title-text">
             <h2>Category</h2>
@@ -57,14 +57,14 @@
             </p>
           </div>
           <div class="value-text text-area">
-            <input type="text" value="" required />
+            <input id="feedbackDetail" type="text" value="" required />
           </div>
 
           <div class="qrup-btn">
-            <div class="delete"></div>
+            <div ></div>
             <div class="cancel-update">
-              <button>Cancel</button>
-              <button>Update Feedback</button>
+              <button><a href="../../index.html">Cancel</a></button>
+              <button id="addFeedback">Add Feedback</button>
             </div>
           </div>
         </div>
@@ -82,6 +82,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="../../assets/js/feedback-detial.js"></script>
+    <script type="module" src="../js/create.js"></script>
   </body>
 </html>

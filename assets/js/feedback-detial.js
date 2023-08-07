@@ -2,7 +2,6 @@ const countUp = document.getElementById("count-up");
 const countBtn = document.getElementById("countBtn");
 const postReply = document.querySelectorAll(".reply-one");
 const postReplyes = document.querySelectorAll(".replyes");
-const replyForm = document.querySelector(".form-reply-comment");
 const generalForm = document.querySelector(".general-comment");
 const postComment = document.getElementById('postComment');
 const postCommentInp = document.getElementById('postCommentInp');
@@ -48,8 +47,8 @@ async function getCommentData() {
                         <h1>${userData.name}</h1>
                         <p>${userData.username}</p>
                     </div>
-                    <div class="reply reply-one">
-                        <p>Reply</p>
+                    <div class="reply replyes reply-one">
+                        <p class="replyes">Reply</p>
                     </div>
                 </div>
                 <div class="comment-text">
@@ -140,77 +139,21 @@ newPostComment.innerHTML =`
     </p>
   </div>
 
-  <section class="section-reply-comment">
-    <div class="comment-box">
-      <div class="profile-img">
-        <img src="../img/profile-img.jpg" alt="" />
-      </div>
-      <div class="user-comment">
-        <div class="user-reply">
-          <div class="user-name">
-            <h1>Eshgin Farzaliyev</h1>
-            <p>@eshginfarzali</p>
-          </div>
-          <div class="reply replyes">
-            <p class="replyes">Reply</p>
-          </div>
-        </div>
-        <div class="comment-text">
-          <p>
-            Also, please allow styles to be applied based on system
-            preferences. I would love to be able to browse Frontend
-            Mentor in the evening after my device’s dark mode turns on
-            without the background it currently has. preferences. I
-            would love to be able to browse Frontend Mentor in the
-            evening after my device’s dark mode turns on without the
-            bright background it currently has.
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="comment-box">
-      <div class="profile-img">
-        <img src="../img/profile-img.jpg" alt="" />
-      </div>
-      <div class="user-comment">
-        <div class="user-reply">
-          <div class="user-name">
-            <h1>Eshgin Farzaliyev</h1>
-            <p>@eshginfarzali</p>
-          </div>
-          <div class="reply replyes">
-            <p class="replyes">Reply</p>
-          </div>
-        </div>
-        <div class="comment-text">
-          <p>
-            Also, please allow styles to be applied based on system
-            preferences. I would love to be able to browse Frontend
-            Mentor in the evening after my device’s dark mode turns on
-            without the background it currently has. preferences. I
-            would love to be able to browse Frontend Mentor in the
-            evening after my device’s dark mode turns on without the
-            bright background it currently has.
-          </p>
-        </div>
-        <form style="gap: 10px;" class="form-reply-comment"></form>
-      </div>
-    </div>
-
-  </section>
-</div>
-</div>
+  
 <form class="general-comment"></form>`
 postCommentInp.value=''
 
 }
 postComment.addEventListener("click", addPostComment);
 
+
+const replyForm = document.querySelector(".form-reply-comment");
 function addPostReplyes() {
-    replyForm.innerHTML = `
+
+    const formReplyComment = document.createElement("div");
+    formReplyComment.className = "form-reply-comment";
+    
+    formReplyComment.innerHTML = `
         <form>
             <div class="inp-text">
                 <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
@@ -218,23 +161,22 @@ function addPostReplyes() {
             <div class="post-reply"><button>Post Reply</button></div>
         </form>
     `;
+    
+    const commentBox = document.querySelector(".reply-box-inp");
+    commentBox.appendChild(formReplyComment);
 }
 
-function addPostReply() {
-    generalForm.innerHTML = `
-        <form>
-            <div class="inp-text">
-                <input type="text" name="textInput" minlength="3" maxlength="250" value="" required>
-            </div>
-            <div class="post-reply"><button>Post Reply</button></div>
-        </form>
-    `;
-}
+
 
 postReplyes.forEach((button) => {
-    button.addEventListener("click", addPostReplyes);
+  button.addEventListener("click", addPostReplyes);
 });
 
-postReply.forEach((button) => {
-    button.addEventListener("click", addPostReply);
+
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("replyes")) {
+      addPostReplyes();
+  } else if (event.target.closest(".form-reply-comment")) {
+    
+  }
 });

@@ -1,3 +1,5 @@
+
+// import feedBacDetail from '../../assets/page/feedback-detial.html'
 const body = document.body;
 const menuToggle = document.getElementById("menu__toggle");
 const roadmapBox = document.querySelector(".roadmap-box");
@@ -23,54 +25,59 @@ async function fetchAndRenderData() {
       throw new Error("Network response was not ok");
     }
 
-    data = await response.json();
+  const  dataJson = await response.json();
+  
 
-    feedBackBox.innerHTML = "";
-    // feedsCount.innerHTML = "<li>0</li><li>0</li><li>0</li>";
+  const retrievedData = JSON.parse(localStorage.getItem("feedbackData")) || [];
+       const data= [...dataJson ,...retrievedData]
+
+
+    if (feedBackBox) feedBackBox.innerHTML = "";
 
     const statusCounts = { Planned: 0, "In-Progress": 0, Live: 0 };
 
     data.forEach((item) => {
       const status = item.status;
       statusCounts[status]++;
-      feedsCount.innerHTML = `
+      if (feedsCount)
+        feedsCount.innerHTML = `
       <li>${statusCounts.Planned || 0}  </li>
       <li>${statusCounts["In-Progress"] || 0}</li>
       <li>${statusCounts.Live || 0}</li>`;
       const section = document.createElement("section");
       section.className = "add-feedback-box";
 
-      let sectionFeedBox = document.querySelectorAll(".add-feedback-box"); 
-      const detialBox =document.querySelector(".detail-box")
-      sectionFeedBox.forEach(feedbox => {
+
+      //feedback detail start
+      let sectionFeedBox = document.querySelectorAll(".text-feed-box");
+      sectionFeedBox.forEach((feedbox) => {
+        feedbox.setAttribute("id", item.id);
+
         
-        // console.log(feedbox);
-         feedbox.setAttribute("id", item.id);
-         feedbox.addEventListener("click", ()=>{
-               let idAttribute = feedbox.getAttribute("id")
-               if(item.id === idAttribute){
-                detialBox.innerHTML=`
+        feedbox.addEventListener("click", () => {
+          location.href = "../../assets/page/feedback-detial.html";
+          const detialBox = document.getElementById("feedbackDetailBox");
+          let idAttribute = feedbox.getAttribute("id");
+          let selectedObject = data.find(function (item) {
+            return item.id === idAttribute;
+          });
+
+          //html-feedback
+          detialBox.innerHTML = `
                 <div class="text-feed">
-                <h2>${item.title}</h2>
-                <p>${item.text}</p>
-                <button>${item.category}</button>
+                <h2>${selectedObject.title}</h2>
+                <p>${selectedObject.text}</p>
+                <button>${selectedObject.category}</button>
               </div>
               <div class="feed-com">
                 <img src="../../assets/icons/comment.svg" alt="comment" />
-                <span>${item.comment}</span>
+                <span>${selectedObject.comment}</span>
               </div>
-                `
-                console.log(item);
-               }
-   
-          location.href = "../../assets/page/feedback-detial.html";
+                `;
+        });
+      });
 
-         })
-
- 
-      });   
-        
-
+      //feedback detail end
 
       const countFeedDiv = document.createElement("div");
       countFeedDiv.className = "count-feed";
