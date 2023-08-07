@@ -44,7 +44,7 @@ function updateListItem(item, target) {
   
   target.appendChild(item);
 }
-
+let data =[]
 
 async function fetchAndRenderData() {
   try {
@@ -52,8 +52,8 @@ async function fetchAndRenderData() {
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-
-    const data = await response.json();
+    const retrievedData = JSON.parse(localStorage.getItem("feedbackData")) || [];
+    data =  [...await response.json(),...retrievedData];
     data.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.classList.add("task");
@@ -74,7 +74,7 @@ async function fetchAndRenderData() {
         <div class="reyting-comment">
           <button class="reyting">
             <img src="../icons/chevron-up.svg" alt="" />
-            <span>123</span>
+            <span>${item.rating}</span>
           </button>
           <div class="comment">
             <img src="../icons/comment.svg" alt="" /> <span>2</span>

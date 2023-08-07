@@ -29,7 +29,7 @@ async function fetchAndRenderData() {
     }
 
     data = [...await response.json(),...retrievedData];
-    console.log(data);
+
     if (feedBackBox) feedBackBox.innerHTML = "";
 
     const statusCounts = { Planned: 0, "In-Progress": 0, Live: 0 };
@@ -52,9 +52,10 @@ async function fetchAndRenderData() {
         feedbox.setAttribute("id", item.id);
 
         
-        feedbox.addEventListener("click", () => {
+        feedbox.addEventListener("click",  () => {
           location.href = "../../assets/page/feedback-detial.html";
           const detialBox = document.getElementById("feedbackDetailBox");
+          
           let idAttribute = feedbox.getAttribute("id");
           let selectedObject = data.find(function (item) {
             return item.id === idAttribute;
@@ -75,7 +76,7 @@ async function fetchAndRenderData() {
         });
       });
 
-      //feedback detail
+      //feedback detail end
 
       const countFeedDiv = document.createElement("div");
       countFeedDiv.className = "count-feed";

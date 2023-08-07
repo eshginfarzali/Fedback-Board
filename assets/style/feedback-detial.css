@@ -240,7 +240,7 @@ header > .edit-btn > a:hover {
   margin-top: 20px;
   padding: 20px;
   width: 100%;
-  min-height: 100vh;
+  min-height: 70vh;
   background-color: var(--snow-white);
 }
 .comment-text > p {
