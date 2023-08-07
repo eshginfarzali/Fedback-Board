@@ -16,7 +16,10 @@ const enhancement = document.querySelector(".enhancement");
 const bug = document.querySelector(".bug");
 const feature = document.querySelector(".feature");
 
-let data = [];
+const retrievedData = JSON.parse(localStorage.getItem("feedbackData")) || [];
+
+let data = []
+
 const statusCounts = {};
 async function fetchAndRenderData() {
   try {
@@ -25,13 +28,8 @@ async function fetchAndRenderData() {
       throw new Error("Network response was not ok");
     }
 
-  const  dataJson = await response.json();
-  
-
-  const retrievedData = JSON.parse(localStorage.getItem("feedbackData")) || [];
-       const data= [...dataJson ,...retrievedData]
-
-
+    data = [...await response.json(),...retrievedData];
+    console.log(data);
     if (feedBackBox) feedBackBox.innerHTML = "";
 
     const statusCounts = { Planned: 0, "In-Progress": 0, Live: 0 };
@@ -77,7 +75,7 @@ async function fetchAndRenderData() {
         });
       });
 
-      //feedback detail end
+      //feedback detail
 
       const countFeedDiv = document.createElement("div");
       countFeedDiv.className = "count-feed";
