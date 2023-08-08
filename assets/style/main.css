@@ -41,7 +41,7 @@ body {
 
 main {
   display: grid;
-  grid-template-areas: "frontend  nav nav nav nav";
+  grid-template-areas: "frontend nav nav nav nav nav nav nav nav nav";
 }
 .front-end-mentor {
   grid-area: frontend;
