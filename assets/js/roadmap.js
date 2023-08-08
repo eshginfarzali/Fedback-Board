@@ -1,3 +1,6 @@
+// import '../style/roadmap.css';
+// import '../style/dragdrop.css';
+
 const drake = dragula([
   document.getElementById("planned"),
   document.getElementById("progress"),
@@ -46,14 +49,11 @@ function updateListItem(item, target) {
 }
 let data =[]
 
-async function fetchAndRenderData() {
-  try {
-    const response = await fetch("../../Json/feedback.json");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const retrievedData = JSON.parse(localStorage.getItem("feedbackData")) || [];
-    data =  [...await response.json(),...retrievedData];
+ function fetchAndRenderData() {
+ 
+  const remoteData = JSON.parse( localStorage.getItem("remoteDataLocalStorge"))
+    data = [...remoteData];
+    
     data.forEach((item) => {
       const listItem = document.createElement("li");
       listItem.classList.add("task");
@@ -89,12 +89,9 @@ async function fetchAndRenderData() {
       } else if (item.status === "Live") {
         live.appendChild(listItem);
       }
-    });
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
+    
 }
-
+    )}
 fetchAndRenderData();
 
 

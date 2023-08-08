@@ -1,3 +1,5 @@
+// import '../style/feedback-detial.css';
+
 const countUp = document.getElementById("count-up");
 const countBtn = document.getElementById("countBtn");
 const postReply = document.querySelectorAll(".reply-one");
@@ -7,26 +9,15 @@ const postComment = document.getElementById('postComment');
 const postCommentInp = document.getElementById('postCommentInp');
 const newPostComment = document.querySelector('.new-post-comment-general');
 const commentBox = document.querySelector('.comment-box');
+const feedbackDetailBox =document.getElementById("feedbackDetailBox")
 
-let count = 0;
-const storedCount = localStorage.getItem("count");
-if (storedCount !== null) {
-    count = parseInt(storedCount);
-    updateCountText();
-}
 
-function updateCountText() {
-    countUp.textContent = `${count}`;
-}
 
-function handleUpCount() {
-    count++;
-    updateCountText();
-    localStorage.setItem("count", count);
-    countBtn.removeEventListener("click", handleUpCount);
-}
 
-countBtn.addEventListener("click", handleUpCount);
+
+
+
+
 
 async function fetchUser() {
     const resp = await fetch("../../Json/User.json");
@@ -180,3 +171,39 @@ document.addEventListener("click", function(event) {
     
   }
 });
+
+
+function getDataDetial(){
+    const storedData = JSON.parse(localStorage.getItem("remoteDataLocalStorge"))
+    const feddDataId = JSON.parse(localStorage.getItem("feedbackId"));
+    console.log(feddDataId);
+    console.log(storedData);
+    
+    const foundData = storedData.find(item => item.id === feddDataId);
+    
+    if (foundData) {
+        let count = foundData.rating;
+        countUp.textContent = count;
+        
+        countBtn.addEventListener("click", () => {
+            countUp.textContent = ++count;
+        });
+        feedbackDetailBox.innerHTML=`
+        <div class="text-feed">
+        <h2>${foundData.title}</h2>
+        <p>${foundData.text}</p>
+        <button>${foundData.category}</button>
+      </div>
+      <div class="feed-com">
+        <img src="../../assets/icons/comment.svg" alt="comment" />
+        <span>${foundData.comment}</span>
+      </div>
+        `
+    } else {
+        feedbackDetailBox.innerHTML=`
+        <div class="text-feed"> <p>Data not found</p> </div>`
+    }
+    
+
+}
+getDataDetial()
