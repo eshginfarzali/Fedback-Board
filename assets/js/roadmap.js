@@ -49,7 +49,7 @@ function updateListItem(item, target) {
 }
 let data =[]
 
- function fetchAndRenderData() {
+ function renderData() {
  
   const remoteData = JSON.parse( localStorage.getItem("remoteDataLocalStorge"))
     data = [...remoteData];
@@ -92,7 +92,7 @@ let data =[]
     
 }
     )}
-fetchAndRenderData();
+renderData();
 
 
 
@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const liveHeader = document.querySelector('.live-header');
   const columns = document.querySelector('.columns');
 
-  // İlk yüklendiğinde yalnızca "Planned" sütunu görünsün
   columns.classList.add('show-planned');
   plannedHeader.classList.add('show-border-planned');
 
