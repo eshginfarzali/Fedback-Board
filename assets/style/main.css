@@ -304,6 +304,9 @@ nav {
   background-color: var(--snow-white);
   border-radius: 8px;
   cursor: pointer;
+  &:hover{
+    border: 1px solid var(--lavender-purple);
+  }
 }
 
 .count-feed > button {
