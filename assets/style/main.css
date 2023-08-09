@@ -305,7 +305,7 @@ nav {
   border-radius: 8px;
   cursor: pointer;
   &:hover{
-    border: 1px solid var(--lavender-purple);
+    outline: 1px solid var(--lavender-purple);
   }
 }
 
