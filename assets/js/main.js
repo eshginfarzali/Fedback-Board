@@ -15,7 +15,6 @@ const enhancement = document.querySelector(".enhancement");
 const bug = document.querySelector(".bug");
 const feature = document.querySelector(".feature");
 
-// const retrievedData = JSON.parse(localStorage.getItem("feedbackData")) || [];
 
 let data = []
 
